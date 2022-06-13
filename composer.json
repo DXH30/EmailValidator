@@ -1,11 +1,16 @@
 {
     "name": "dxh30/email-validator",
-    "description": "Validate Email Fraud",
+    "description": "Validate Email",
     "authors": [
         {
             "name": "Didik Hadumi Setiaji",
             "email": "dhs0223@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "EmailValidator\\": "src/"
+        }
+    },
     "require": {}
 }
