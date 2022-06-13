@@ -1,6 +1,8 @@
 {
     "name": "dxh30/email-validator",
     "description": "Validate Email",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Didik Hadumi Setiaji",
