@@ -10,8 +10,9 @@ class Validate {
      * @return boolean
      */
     public function validate($email) {
+        $domain = explode('@', $email)[1];
         if (in_array($this->blacklistedDomains, $domain)) { 
-            throw new Exception("the email domain $domain is inside blacklisted domains");
+            throw new Exception("the email domain: $domain is inside blacklisted domains");
         }
     }
 
