@@ -3,6 +3,7 @@
     "description": "Validate Email",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Didik Hadumi Setiaji",
