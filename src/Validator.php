@@ -3,7 +3,7 @@ namespace DXH30\EmailValidator;
 require './vendor/autoload.php';
 
 class Validator {
-    private $blacklistedDomains;
+    private static $blacklistedDomains;
 
     /* @description
      * validate email if it is not inside blacklisted domains
