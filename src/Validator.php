@@ -3,7 +3,7 @@ namespace DXH30\EmailValidator;
 require './vendor/autoload.php';
 
 class Validator {
-    private static $blacklistedDomains;
+    public static $blacklistedDomains;
 
     /* @description
      * validate email if it is not inside blacklisted domains
@@ -11,7 +11,7 @@ class Validator {
      */
     public function validate($email) {
         $domain = explode('@', $email)[1];
-        if (in_array($domain, $this->blacklistedDomains)) { 
+        if (in_array($domain, Validator::$blacklistedDomains)) { 
             return false;
         } else {
             return true;
@@ -20,9 +20,10 @@ class Validator {
 
     /* @description
      * set blacklisted domains
+     * @return boolean
      */
     public function setBlacklistedDomains($domains = array()) {
-        $this->blacklistedDomains = $domains;
+        return Validator::$blacklistedDomains = $domains;
     }
 
     /* @description
@@ -31,6 +32,15 @@ class Validator {
      */
 
     public function getBlacklistedDomains() {
-        return $this->blacklistedDomains;
+        return Validator::$blacklistedDomains;
+    }
+
+    /* @description
+     * append domain to blacklisteddomains
+     * @return boolean
+     */
+
+    public function appendBlacklistedDomain($domain) {
+        return array_push(Validator::$blacklistedDomains, $domain);
     }
 }
